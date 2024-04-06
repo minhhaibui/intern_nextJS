@@ -8,8 +8,8 @@ export default async function PrivateLayout({
 }: {
   children: React.ReactNode;
 }) {
-  if (!canRoute) {
-    return redirect(sitemap.profile({}));
-  }
+  // if (!canRoute) {
+  //   return redirect(sitemap.profile({}));
+  // }
   return <Layout>{children}</Layout>;
 }

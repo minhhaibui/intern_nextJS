@@ -10,7 +10,6 @@ import Providers from '@/components/Providers';
 import clsx from 'clsx';
 import { fontSans } from '@/configs/font.config';
 import { getHeader } from '@/helpers/next';
-import Loading from '@/components/Loading';
 
 export async function generateMetadata(): Promise<Metadata> {
   const metadata = await getMetadata('Trang chủ');
@@ -30,11 +29,7 @@ export default async function RootLayout({
       <body className={clsx('body', fontSans.className)}>
         <Providers>
           <Header>
-            {navbar ? (
-              <Navbar navbar={navbar} pathname={pathname} />
-            ) : (
-              <Loading></Loading>
-            )}
+            <Navbar navbar={navbar} pathname={pathname} />
           </Header>
           <Content className="container px-4">
             <BreadCrumbs pathname={pathname} />

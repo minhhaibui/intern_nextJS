@@ -9,15 +9,14 @@ export default async function PrivateLayout({
 }: {
   children: React.ReactNode;
 }) {
-  if (!isLogin) {
-    const pathname = getHeader('x-pathname');
-    // console.log('ok');
-
-    return redirect(
-      sitemap.auth.login({
-        next: pathname,
-      })
-    );
-  }
+  // if (!isLogin) {
+  //   const pathname = getHeader('x-pathname');
+  //   // console.log('ok');
+  //   return redirect(
+  //     sitemap.auth.login({
+  //       next: pathname,
+  //     })
+  //   );
+  // }
   return <Layout>{children}</Layout>;
 }
